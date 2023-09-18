@@ -8,11 +8,10 @@ public abstract class Pony {
     private Coordinate position;
     private Location location;
 
-    public Pony(String name, int experienceLevel, Coordinate position, Location location) {
+    public Pony(String name, int experienceLevel) {
         this.name = name;
         this.experienceLevel = experienceLevel;
-        this.position = position;
-        this.location = location;
+        this.position = new Coordinate(0, 0);
     }
 
     public abstract Coordinate walk();
