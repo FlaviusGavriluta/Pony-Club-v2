@@ -25,9 +25,9 @@ public class Main {
         Unicorn unicorn = new Unicorn("Unicorn", 6);
         Unicorn unicorn2 = new Unicorn("Unicorn2", 5);
 
-//        System.out.println(unicorn);
-//        unicorn.canDoMagic();
-//        System.out.println(unicorn);
+        System.out.println(unicorn);
+        unicorn.canDoMagic(unicorn);
+        System.out.println(unicorn);
 
 
         User user1 = new User("Lovendal", LocalDate.of(2023, Calendar.AUGUST, 20));
@@ -43,22 +43,19 @@ public class Main {
 
         user3.addPony(pegasus2);
         user3.addPony(normalPony2);
+        user3.addPony(superPony2);
 
 
         ponyClub.users.add(user1);
         ponyClub.users.add(user2);
+        ponyClub.users.add(user3);
 
-        Scanner in = new Scanner(System.in);
+//        ponyClub.users.forEach(user -> user.getPonies().forEach(System.out::println));
+
+//        Scanner in = new Scanner(System.in);
 //        System.out.println("List ponies of position: ");
 //        System.out.println(ponyClub.listPonyByPosition(new Coordinate(in.nextInt(), in.nextInt())));
 
-        superPony2.canDoMagic();
-        superPony2.canDoMagic();
-        superPony2.canDoMagic();
-
-        user3.addPony(superPony2);
-        ponyClub.users.add(user3);
-
-        System.out.println(ponyClub.highestLevelOfPony());
+//        System.out.println(ponyClub.highestLevelOfPony());
     }
 }

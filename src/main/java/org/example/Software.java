@@ -23,7 +23,6 @@ public class Software {
                 .collect(Collectors.toList());
     }
 
-
     public User highestLevelOfPony() {
         Pony highestLevelPony = users.stream()
                 .flatMap(user -> user.getPonies().stream()
