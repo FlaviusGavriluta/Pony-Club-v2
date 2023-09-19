@@ -1,19 +1,20 @@
 package org.example.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+
+import static java.util.Calendar.AUGUST;
 
 public class User {
     private String username;
-    private Date registrationDate;
-    List<Pony> ponies;
+    private LocalDate registrationDate;
+    List<Pony> ponies = new ArrayList<>();
 
-    public User(String username, Date registrationDate) {
+    public User(String username, LocalDate registrationDate) {
         this.username = username;
         this.registrationDate = registrationDate;
-        this.ponies = new ArrayList<>();
+        getSuperPony();
     }
 
     public List<Pony> addPony(Pony pony) {
@@ -21,10 +22,10 @@ public class User {
         return ponies;
     }
 
-    private List<Pony> getSuperPony() {
-        return this.registrationDate.getMonth() == Calendar.AUGUST
-                ? addPony(new SuperPony("SuperPony", 10))
-                : ponies;
+    private void getSuperPony() {
+
+        if (registrationDate.getMonth().getValue() == AUGUST)
+            ponies.add(new SuperPony("SuperPony", 10));
     }
 
     public String getUsername() {
@@ -35,11 +36,11 @@ public class User {
         this.username = username;
     }
 
-    public Date getRegistrationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
 

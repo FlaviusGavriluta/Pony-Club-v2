@@ -1,14 +1,15 @@
 package org.example.model;
 
-import org.example.enums.Location;
+import java.util.Scanner;
 
 public class Pegasus extends Pony {
     public Pegasus(String name, int experienceLevel) {
         super(name, experienceLevel);
     }
 
-    @Override
-    public Coordinate walk() {
-        return null;
+    public void canFly() {
+        Scanner scanner = new Scanner(System.in);
+        setPosition(new Coordinate(scanner.nextInt(), scanner.nextInt()));
+        System.out.println(getName() + "fly, fly, fly on: " + getPosition());
     }
 }
